@@ -17,5 +17,6 @@ namespace EscolaApp
             return $"{id} - {Curso} - {Descricao} - {AnoLetivo}";
 
         }
+
     }
 }
