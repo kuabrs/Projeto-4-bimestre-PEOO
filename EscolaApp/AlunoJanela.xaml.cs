@@ -27,6 +27,10 @@ namespace EscolaApp
         private void inserirclick(object sender, RoutedEventArgs e)
         {
             //Novo objeto com os dados da turma que será inserida
+            int id = int.Parse(txtid.Text);
+            string nome = txtnome.Text;
+            string mat = txtmatricula.Text;
+            string email = txtemail.Text;
             Aluno a = new Aluno();
             a.id = int.Parse(txtid.Text);
             a.idturma = int.Parse(txtidturma.Text);
@@ -70,6 +74,17 @@ namespace EscolaApp
             //Inserir a turma na lista de turmas
             nAluno.Excluir(a);
             listarclick(sender, e);
+        }
+        private void listAlunos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (listalunos.SelectedItem != null)
+            {
+                Aluno obj = (Aluno)listalunos.SelectedItem;
+                txtid.Text = obj.id.ToString();
+                txtnome.Text = obj.nome;
+                txtmatricula.Text = obj.matricula;
+                txtemail.Text = obj.email;
+            }
         }
     }
 }

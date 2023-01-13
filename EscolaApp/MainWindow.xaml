@@ -5,12 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EscolaApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="200" Width="300">
+        Title="Escola" Height="250" Width="300">
     <Grid>
-        <Button Click="Turma_click" Content="Cadastrar Turma" HorizontalAlignment="Left" Height="27" Margin="21,32,0,0" VerticalAlignment="Top" Width="92"/>
-        <Button Click="Aluno_click" Content="Cadastrar Aluno" HorizontalAlignment="Left" Height="27" Margin="21,64,0,0" VerticalAlignment="Top" Width="92"/>
-        <Button Click="Matricula_click" Content="Matricular Aluno" HorizontalAlignment="Left" Height="28" Margin="21,97,0,0" VerticalAlignment="Top" Width="92"/>
-        <Button Click="Diario_click" Content="Diário da Turma" HorizontalAlignment="Left" Height="27" Margin="21,130,0,0" VerticalAlignment="Top" Width="92"/>
+        <Menu>
+            <MenuItem Header="Cadastros">
+                <MenuItem Header="Turmas..." Click="Turma_click"></MenuItem>
+                <MenuItem Header="Aluno..." Click="Aluno_click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Operações">
+                <MenuItem Header="Matricular..." Click="Matricula_click"></MenuItem>
+                <MenuItem Header="Diario..." Click="Diario_click"></MenuItem>
+            </MenuItem>
+
+        </Menu>
+        <Button Visibility="Hidden" Click="Turma_click" Content="Cadastrar Turma" HorizontalAlignment="Left" Height="27" Margin="15,59,0,0" VerticalAlignment="Top" Width="92"/>
+        <Button Visibility="Hidden" Click="Aluno_click" Content="Cadastrar Aluno" HorizontalAlignment="Left" Height="27" Margin="15,96,0,0" VerticalAlignment="Top" Width="92"/>
+        <Button Visibility="Hidden" Click="Matricula_click" Content="Matricular Aluno" HorizontalAlignment="Left" Height="27" Margin="15,134,0,0" VerticalAlignment="Top" Width="92"/>
+        <Button Visibility="Hidden" Click="Diario_click" Content="Diário da Turma" HorizontalAlignment="Left" Height="27" Margin="127,68,0,0" VerticalAlignment="Top" Width="92"/>
 
     </Grid>
 </Window>

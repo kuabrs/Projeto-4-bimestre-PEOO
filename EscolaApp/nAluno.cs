@@ -22,6 +22,13 @@ namespace EscolaApp
             Abrir();
             return Alunos;
         }
+        public static Aluno Listar(int id)
+        {
+            // Encontra, se existir, uma turma com o id
+            foreach (Aluno obj in Alunos)
+                if (obj.id == id) return obj;
+            return null;
+        }
         public static void Atualizar(Aluno a)
         {
             Abrir();
@@ -74,6 +81,19 @@ namespace EscolaApp
             xml.Serialize(f, Alunos);
             // Fecha o arquivo
             f.Close();
+        }
+        public static void Matricular(Aluno a, Turma t)
+        {
+            a.idturma = t.id;
+            Atualizar(a);
+            }
+        public static List<Aluno> Listar(Turma t)
+        {
+            Abrir();
+            List<Aluno> diario = new List<Aluno>();
+            foreach (Aluno obj in Alunos)
+                if (obj.idturma == t.id) diario.Add(obj);
+            return diario;
         }
     }
 }

@@ -22,6 +22,18 @@ namespace EscolaApp
         public DiarioJanela()
         {
             InitializeComponent();
+            listTurmas.ItemsSource = nTurma.Listar();
+
+        }
+
+        private void buttonlist(object sender, RoutedEventArgs e)
+        {
+            if (listTurmas.SelectedItem != null)
+            {
+                Turma t = (Turma)listTurmas.SelectedItem;
+                listAlunos.ItemsSource = null;
+                listAlunos.ItemsSource = nAluno.Listar();
+            }
         }
     }
 }

@@ -23,5 +23,28 @@ namespace EscolaApp
         {
             InitializeComponent();
         }
+
+        private void buttonlist(object sender, RoutedEventArgs e)
+        {
+            listTurmas.ItemsSource = null;
+            listTurmas.ItemsSource = nTurma.Listar();
+            listAlunos.ItemsSource = null;
+            listAlunos.ItemsSource = nAluno.Listar();
+        }
+
+        private void buttonmatric(object sender, RoutedEventArgs e)
+        {
+            if(listTurmas.SelectedItem!=null && listAlunos.SelectedItem != null)
+            {
+                Aluno a = (Aluno)listAlunos.SelectedItem;
+                Turma t = (Turma)listTurmas.SelectedItem;
+                nAluno.Matricular(a, t);
+                buttonlist(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("É preciso selecionar um aluno e uma turma");
+            }
+        }
     }
 }
